@@ -70,5 +70,20 @@ public class MyLinkedListTest {
 		myLinkedList.printMyNodes();
 		Assert.assertEquals(firstNode, popNode);
 	}
+	
+	@Test
+	public void deletingLastElementInLinkedListTest() {
+		MyNode<Integer> firstNode = new MyNode<Integer>(56);
+		MyNode<Integer> secondNode = new MyNode<Integer>(30);
+		MyNode<Integer> thirdNode = new MyNode<Integer>(70);
+		MyLinkedList myLinkedList = new MyLinkedList();
+		myLinkedList.add(firstNode);
+		myLinkedList.append(secondNode);
+		myLinkedList.append(thirdNode);
+		INode popNode = myLinkedList.popLast();
+		System.out.println("Linked List After Deleting Last Node");
+		myLinkedList.printMyNodes();
+		Assert.assertEquals(thirdNode, popNode);
+	}
 
 }
