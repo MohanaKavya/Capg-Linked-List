@@ -55,5 +55,20 @@ public class MyLinkedListTest {
 				&& myLinkedList.tail.equals(thirdNode);
 		Assert.assertTrue(result);
 	}
+	
+	@Test
+	public void deletingFirstElementInLinkedListTest() {
+		MyNode<Integer> firstNode = new MyNode<Integer>(56);
+		MyNode<Integer> secondNode = new MyNode<Integer>(30);
+		MyNode<Integer> thirdNode = new MyNode<Integer>(70);
+		MyLinkedList myLinkedList = new MyLinkedList();
+		myLinkedList.add(firstNode);
+		myLinkedList.append(secondNode);
+		myLinkedList.append(thirdNode);
+		INode popNode = myLinkedList.pop();
+		System.out.println("Linked List After Deleting First Node");
+		myLinkedList.printMyNodes();
+		Assert.assertEquals(firstNode, popNode);
+	}
 
 }
