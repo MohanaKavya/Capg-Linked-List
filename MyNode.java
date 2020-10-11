@@ -1,27 +1,28 @@
 package com.capgemini.assignment.linkedlist;
 
-public class MyNode<T> {
+public class MyNode<T> implements INode<T> {
 
 	private T key;
-	private MyNode next;
+	private INode<T> next;
 
 	public MyNode(T key) {
 		this.key = key;
 		this.next = null;
 	}
-
-	public void setNext(MyNode<T> myNode) {
-		this.next = myNode;
+	
+	@Override
+	public void setNext(INode<T> next) {
+		this.next = next;
 	}
-
-	public MyNode<T> getNext() {
+	@Override
+	public INode<T> getNext() {
 		return this.next;
 	}
-
+	@Override
 	public T getKey() {
 		return key;
 	}
-
+	@Override
 	public void setKey(T key) {
 		this.key = key;
 	}
