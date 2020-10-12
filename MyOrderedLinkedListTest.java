@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import junit.framework.Assert;
+import junit.framework.*;
 
 class MyOrderedLinkedListTest {
 
@@ -19,10 +19,11 @@ class MyOrderedLinkedListTest {
 		myOrderedLinkedList.add(secondNode);
 		myOrderedLinkedList.add(thirdNode);
 		myOrderedLinkedList.add(fourthNode);
+		System.out.println("Sorted List");
 		myOrderedLinkedList.printMyNodes();
 		boolean check = secondNode.getNext().equals(thirdNode) && thirdNode.getNext().equals(firstNode) &&
 						firstNode.getNext().equals(fourthNode);
-		Assert.assertTrue(check);
+		assertTrue(check);
 
 	}
 

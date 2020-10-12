@@ -10,29 +10,29 @@ public class MyOrderedLinkedList {
 	}
 
 	public <T extends Comparable<T>> void add(INode newNode) {
-		if(myLinkedList.head==null)
+		if(myLinkedList.head==null) 
 			myLinkedList.add(newNode);
+
 		else if(myLinkedList.head!=null && myLinkedList.tail!=null){
 			int compareHead = myLinkedList.head.getKey().compareTo(newNode.getKey());
 			int compareTail = myLinkedList.tail.getKey().compareTo(newNode.getKey());
 			if(compareHead==1) 
-				myLinkedList.add(newNode);
-			if(compareTail==-1)
+				myLinkedList.add(newNode);			
+			else if(compareTail==-1) 
 				myLinkedList.append(newNode);
-			else
-				compare(myLinkedList.head, newNode);			
+				else
+					compare(myLinkedList.head, newNode);			
 		}
 	}
 
 	public void compare(INode tempCode, INode newNode) {
-		while(tempCode.getNext()!=null) {
-			int compare = tempCode.getNext().getKey().compareTo(newNode.getKey());
-			if(compare==-1)
+		int compare = tempCode.getNext().getKey().compareTo(newNode.getKey());
+		if(compare==-1 && tempCode.getNext()!=myLinkedList.tail) {	
 				compare(tempCode.getNext(), newNode);
-			else if(compare==1)
-				myLinkedList.insert(tempCode, newNode);				
 		}
-	}
+			else if(compare==1)
+				myLinkedList.insert(tempCode, newNode);
+		}
 
 	public void printMyNodes() {
 		myLinkedList.printMyNodes();
