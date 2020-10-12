@@ -4,6 +4,7 @@ public class MyLinkedList<T> {
 
 	public INode head;
 	public INode tail;
+	public int size;
 
 	public MyLinkedList() {
 		this.head = null;
@@ -66,7 +67,7 @@ public class MyLinkedList<T> {
 		return tempNode;
 	}
 
-	public INode<T> search(T key) {
+	public INode search(T key) {
 		INode tempNode=head;
 		while(tempNode!=null && tempNode.getNext()!=null) {
 			if(tempNode.getKey().equals(key)) {
@@ -86,6 +87,15 @@ public class MyLinkedList<T> {
 		}
 		tempNode.setNext(search.getNext());
 		return search;
+	}
+	
+	public int size() {
+		INode n = head;
+		while (n != null) {
+			size++;
+			n = n.getNext();
+		}
+		return size;
 	}
 
 }

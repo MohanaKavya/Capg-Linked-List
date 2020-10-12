@@ -1,6 +1,6 @@
 package com.capgemini.assignment.linkedlist;
 
-public class MyNode<T> implements INode<T> {
+public class MyNode<T extends Comparable<T>> implements INode<T> {
 
 	private T key;
 	private INode<T> next;

@@ -132,9 +132,9 @@ public class MyLinkedListTest {
 		INode delete = myLinkedList.deleteAtPosition(search);
 		System.out.println("Linked List after 3rd Node Search and Delete");
 		myLinkedList.printMyNodes();
-		boolean check = secondNode.getNext().equals(fourthNode) && delete.equals(thirdNode);
+		boolean check = secondNode.getNext().equals(fourthNode) && delete.equals(thirdNode) && 
+						myLinkedList.size()==3;
 		assertTrue(check);
 	}
-
 
 }

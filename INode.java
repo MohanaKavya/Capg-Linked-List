@@ -1,6 +1,6 @@
 package com.capgemini.assignment.linkedlist;
 
-public interface INode<T> {
+public interface INode<T extends Comparable<T>> {
 
 	void setNext(INode<T> myNode);
 	
