@@ -79,4 +79,13 @@ public class MyLinkedList<T> {
 		return null;
 	}
 
+	public INode deleteAtPosition(INode search) {
+		INode tempNode =head;
+		while(tempNode!=null && !tempNode.getNext().equals(search)) {
+			tempNode=tempNode.getNext();
+		}
+		tempNode.setNext(search.getNext());
+		return search;
+	}
+
 }
